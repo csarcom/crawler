@@ -6,6 +6,11 @@ Export the project path to PYTHONPATH::
 	
 	$ export PYTHONPATH=<YOUR_PATH>/cheesecake:$PYTHONPATH
 
+Setup env::
+
+    virtualenv ../env/cheesecake
+    source ../env/cheesecake/bin/activate
+
 Create DB::
 
     python manage.py migrate

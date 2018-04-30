@@ -1,0 +1,15 @@
+image: python:3.6
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - pip
+        script:
+          - echo "Installing requirements."
+          - pip install -r requirements.txt
+          - echo "Running migrations."
+          - python manage.py makemigrations
+          - python manage.py migrate
+          - echo "Running tests."
+          - python manage.py test --pattern="test_*.py"

@@ -4,5 +4,5 @@ NEWSPIDER_MODULE = 'webscrapy.spiders'
 ITEM_PIPELINES = {'webscrapy.pipelines.SqlitePipeline': 300}
 DATABASE = {
     'drivername': 'sqlite',
-    'database': 'posts.sqlite'
+    'database': 'db.sqlite3'
 }

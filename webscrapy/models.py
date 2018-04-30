@@ -1,12 +1,12 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy import Column, Integer, String
 
 
 DeclarativeBase = declarative_base()
 
 
 class Posts(DeclarativeBase):
-    __tablename__ = "posts"
+    __tablename__ = "post_post"
 
     id = Column(Integer, primary_key=True)
     title = Column('title', String)

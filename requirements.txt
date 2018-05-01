@@ -3,3 +3,4 @@ djangorestframework==3.8.2
 SQLAlchemy==1.2.7
 Django==2.0.4
 model-mommy==1.5.1
+Fabric3

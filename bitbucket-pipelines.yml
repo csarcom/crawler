@@ -13,3 +13,6 @@ pipelines:
           - python manage.py migrate
           - echo "Running tests."
           - python manage.py test --pattern="test_*.py"
+          - eval `ssh-agent`
+          - ssh-add /opt/atlassian/pipelines/agent/data/id_rsa
+          - fab deploy

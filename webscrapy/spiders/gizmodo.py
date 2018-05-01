@@ -1,10 +1,10 @@
-from scrapy.spider import BaseSpider
+from scrapy.spiders import Spider
 from scrapy.http import Request
 
 from webscrapy.items import GizmodoItem
 
 
-class GizmodoSpider(BaseSpider):
+class GizmodoSpider(Spider):
     name = 'gizmodo'
     pages = 2
 

@@ -1,3 +1,11 @@
 db.sqlite3
 __pycache__
 *.pyc
+build/
+dbs/
+eggs/
+logs/
+project.egg-info/
+setup.py
+twistd.pid
+webscrapy/dbs/

@@ -1,7 +1,7 @@
 import scrapy
 
 
-class GizmodoItem(scrapy.Item):
+class SpyderItem(scrapy.Item):
     title = scrapy.Field()
     author = scrapy.Field()
     intro = scrapy.Field()

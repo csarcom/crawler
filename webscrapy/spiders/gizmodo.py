@@ -1,7 +1,7 @@
 from scrapy.spiders import Spider
 from scrapy.http import Request
 
-from webscrapy.items import GizmodoItem
+from webscrapy.items import SpyderItem
 
 
 class GizmodoSpider(Spider):
@@ -15,7 +15,7 @@ class GizmodoSpider(Spider):
 
     def parse(self, response):
         for post in response.css('#loop-chamadas')[0].css('.chamada'):
-            item = GizmodoItem()
+            item = SpyderItem()
             item['title'] = post.css('.title-1000 a::attr(title)').extract_first()
             item['intro'] = post.css('.chamada-intro a::text').extract_first().strip()
             item['author'] = post.css('.por a::text').extract_first()
@@ -25,6 +25,6 @@ class GizmodoSpider(Spider):
             yield Request(item['post_url'], callback=self.parse_post, meta={'item': item})
 
     def parse_post(self, response):
-        item = GizmodoItem(response.meta['item'])
+        item = SpyderItem(response.meta['item'])
         item['date'] = response.css('.social-title::text').extract()[1].strip()
         yield item
